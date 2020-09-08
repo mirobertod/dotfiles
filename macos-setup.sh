@@ -37,5 +37,6 @@ brew cask install rectangle
 brew cask install google-chrome
 brew cask install iterm2 # Natural text editing
 brew cask install visual-studio-code
+brew cask install mnemosyne
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
