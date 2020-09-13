@@ -34,7 +34,8 @@ brew cask install burp-suite
 brew cask install wireshark
 brew cask install virtualbox
 brew cask install rectangle
-brew cask install google-chrome
+brew cask install chromium
+brew cask install menumeters
 brew cask install iterm2 # Natural text editing
 brew cask install visual-studio-code
 brew cask install mnemosyne
