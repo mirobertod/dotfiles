@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-xcode-select --install
+#xcode-select --install
+sudo spctl --master-disable
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
@@ -22,6 +23,9 @@ brew install watch
 brew install tree
 brew install shellcheck
 
+brew cask install google-chrome
+brew cask install docker
+brew cask install discord
 brew cask install android-file-transfer
 brew cask install vlc
 brew cask install tableplus
@@ -34,9 +38,8 @@ brew cask install burp-suite
 brew cask install wireshark
 brew cask install virtualbox
 brew cask install rectangle
-brew cask install chromium
 brew cask install menumeters
-brew cask install iterm2 # Natural text editing
+#brew cask install iterm2 # Natural text editing
 brew cask install visual-studio-code
 brew cask install mnemosyne
 
