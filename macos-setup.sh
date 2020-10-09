@@ -22,6 +22,7 @@ brew install pwgen
 brew install watch
 brew install tree
 brew install shellcheck
+brew install nmap
 
 brew cask install google-chrome
 brew cask install docker
