@@ -23,8 +23,9 @@ cp ./.vimrc ~/.vimrc
 
 # === shell ===
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-gsed -i 's/plugins=(git)/plugins=(git gcloud osx kubectl)/g' ~/.zshrc
+gsed -i 's/plugins=(git)/plugins=(git gcloud macos kubectl)/g' ~/.zshrc
 {
+  printf "\n"
   printf "HISTSIZE=10000000\n"
   printf "SAVEHIST=10000000\n"
   printf "unsetopt share_history\n"
