@@ -1,19 +1,31 @@
 #!/usr/bin/env bash
+
+# script exit when a command fails
+set -o errexit
+# catch a command error in pipe execution
+set -o pipefail
+# exit when try to use undeclared variables
+set -o nounset
+# print and expand each command to stdout before executing it
+# set -o xtrace
+
 #xcode-select --install
 sudo spctl --master-disable
 
+# === brew ===
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
+xargs brew install <leaves.txt
+xargs brew install --cask <casks.txt
 
-leaves="./leaves.txt"
-while IFS= read -r l; do
-  brew install "$l"
-done <"$leaves"
-exit 0
+# === vim ===
+cp ./.vimrc ~/.vimrc
 
-casks="./casks.txt"
-while IFS= read -r c; do
-  brew install "$c"
-done <"$casks"
-
+# === shell ===
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+gsed -i 's/plugins=(git)/plugins=(git gcloud osx kubectl)/g' ~/.zshrc
+{
+  printf "HISTSIZE=10000000\n"
+  printf "SAVEHIST=10000000\n"
+  printf "unsetopt share_history\n"
+} >>~/.zshrc
